@@ -10,31 +10,32 @@ package Ejercicio4;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Ejercicio4 {
 
     public static void main(String[] args) {
-        blanco = args[0];
+        sinEspacios();
     }
 
-    public void sinEspacios(){
-        try (FileReader fr = new FileReader("/home/estudiante/IdeaProjects/Unidad6./hola.txt")) {
-            int leido;
+    public static void sinEspacios(){
+        Scanner sc;
 
-            do {
-                leido = fr.read();
+        try (FileReader fr = new FileReader("/home/estudiante/IdeaProjects/Unidad6/hola.txt")) {
+           int leido;
+           sc = new Scanner(fr);
 
+           do {
+               System.out.print(sc.next());
 
-            } while (leido != -1);
-
-
-
+           }while(sc.hasNext());
 
         } catch (FileNotFoundException e) {
             System.out.println("no se encuentra el archivo");
         } catch (IOException e) {
             System.out.println("IOException");
         }
+
 
     }
 }

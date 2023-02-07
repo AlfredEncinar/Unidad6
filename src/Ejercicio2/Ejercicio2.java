@@ -23,7 +23,7 @@ public class Ejercicio2 {
     public static void mediaTexto() {
         Scanner sc;
 
-        try (FileInputStream fis = new FileInputStream("/home/estudiante/IdeaProjects/Unidad6./hola.txt")) {
+        try (FileInputStream fis = new FileInputStream("/home/estudiante/IdeaProjects/Unidad6/hola.txt")) {
 
             sc = new Scanner(fis);
 

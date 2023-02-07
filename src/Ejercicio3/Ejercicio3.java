@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Ejercicio3 {
     public static void main(String[] args) {
 
-        try (FileReader fr = new FileReader("/home/estudiante/IdeaProjects/Unidad6./hola.txt")) {
+        try (FileReader fr = new FileReader("/home/estudiante/IdeaProjects/Unidad6/hola.txt")) {
             int leido;
             int contador = 0;
 
