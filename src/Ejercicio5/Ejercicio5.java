@@ -11,39 +11,24 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Ejercicio5 {
+
     public static void main(String[] args) {
-        String[] array = new String[1];
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingresa una cadena de caracteres: ");
+        String original = sc.nextLine();
+        String reversed = new StringBuilder(original).reverse().toString();
 
+        System.out.print("Ingresa el nombre del archivo: ");
+        String fileName = sc.nextLine();
+        sc.close();
 
-
-
-        System.out.println("Introduce un String o  cadedna de caracteres");
-
-        llenaArrray(array);
-
-        try(FileWriter fw = new FileWriter("adio.txt")){
-
-            array = fw.append();
-        }catch (FileNotFoundException e){
-            System.out.println("FileNotFoundException");
-        }catch (IOException e){
-            System.out.println("IOException");
+        try (FileWriter writer = new FileWriter(fileName + ".txt")) {
+            writer.write(reversed);
+            System.out.println("El archivo ha sido guardado con éxito.");
+        } catch (IOException e) {
+            System.out.println("Error al escribir el archivo: ");
         }
-
-
-
     }
 
-    public static void llenaArrray(String[] array) {
+}
 
-        Scanner sc = new Scanner(System.in);
-
-        for (int i = 0; i < 1; i++) {
-
-
-
-            array[i] = sc.next();
-        }
-
-
-}}
